@@ -18,6 +18,7 @@ Before moving forward with the code, we need to look at certain important functi
 ### 1. Socket Programming
 
 Socket programming is a way of connecting two nodes on a network to communicate with each other. One socket(node) listens on a particular port at an IP, while the other socket reaches out to the other to form a connection. The server forms the listener socket while the client reaches out to the server. 
+![alt text](https://github.com/anika81199/Multiple-Client-Server-System/blob/main/630px-InternetSocketBasicDiagram_zhtw.png)
 ## User Manual
 
 In order to execute this program, you need to follow the below steps in order :
