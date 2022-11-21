@@ -11,6 +11,8 @@ A system designed in such a way that the server handles multiple clients simulta
 Client-Server system is basically the backbone of web browsing. We come across different types of client-server connections in our day-to-day life. The simplest example would be Google Search, it basically connects a client (i.e., user) to a server (i.e., Google Search) and provides the client with the information it needs.
 
 Herein, we have designed a quiz-game which is essentially a basic client-server system, where connection is established when client approaches a server. As soon as the connection is established, the server throws basic arithmetic problems on the client, and based on the answers, marks will be awarded to the client.
+
+
 ![pic2](https://github.com/anika81199/Multiple-Client-Server-System/blob/main/cl.jpg)
 
 ## Software used
