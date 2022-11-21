@@ -1,7 +1,7 @@
 
-# Client-Server System
+# Multiple Client-Server System
 
-A system designed for client-server interaction
+A system designed in a way such that the server handles multiple clients at the same time.
 
 
 
