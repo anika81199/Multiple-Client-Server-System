@@ -41,9 +41,9 @@ This command is used to create a socket object. There are two parameters passed 
     * Is reliable: Packets dropped in the network are detected and retransmitted by the sender.
     * Has in-order data delivery: Data is read by your application in the order it was written by the sender.
     
-    Networks are a best-effort delivery system. There’s no guarantee that your data will reach its destination or that you’ll receive what’s been sent to you. Network devices, such as routers and switches, have finite bandwidth available and come with their own inherent system limitations. They have CPUs, memory, buses, and interface packet buffers, just like your clients and servers. TCP relieves you from having to worry about packet loss, out-of-order data arrival, and other pitfalls that invariably happen when you’re communicating across a network.
+Networks are a best-effort delivery system. There’s no guarantee that your data will reach its destination or that you’ll receive what’s been sent to you. Network devices, such as routers and switches, have finite bandwidth available and come with their own inherent system limitations. They have CPUs, memory, buses, and interface packet buffers, just like your clients and servers. TCP relieves you from having to worry about packet loss, out-of-order data arrival, and other pitfalls that invariably happen when you’re communicating across a network.
 
-//image//
+[!pic1]()
 
 The left-hand column represents the server. On the right-hand side is the client.
 
