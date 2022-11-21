@@ -66,7 +66,7 @@ The IP address `127.0.0.1` is the standard IPv4 address for the loopback interfa
 This method connects the HOST and PORT to the socket server; this is the process that ensures server is bound to a specific IP and port so that it can listen to incoming client's requests on that IP and port.
 
 ### 6. `server_name.listen()`
-A server has a `listen()` method which puts the server into listening mode. This allows the server to listen to incoming connections.The .listen() method has a backlog parameter. It specifies the number of unaccepted connections that the system will allow before refusing new connections.
+A server has a `listen()` method which puts the server into listening mode. This allows the server to listen to incoming connections.The .listen() method has a backlog parameter. It specifies the number of unaccepted connections, that the system will allow before refusing new connections.
 
 ### 7. `server_name.accept()`
 When a client connects, the server calls `.accept()` to accept, or complete, the connection. The `.accept()` method blocks execution and waits for an incoming connection. When a client connects, it returns a new socket object representing the connection and a tuple holding the address of the client. The tuple will contain (host, port) for IPv4 connections. 
