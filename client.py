@@ -1,15 +1,8 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import socket
 import time
 import threading
 import queue
 import random
-
 
 ClientMultiSocket = socket.socket()                                     # socket connect
 host = '127.0.0.1'  
