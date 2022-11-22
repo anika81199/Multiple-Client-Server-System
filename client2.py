@@ -29,91 +29,81 @@ print("2. Simple arithmetic questions will be displayed on screen.")
 print("3. For every correct answer you get 1 point.")
 print("4. For any wrong answer 0.25 points will be deducted!","\n")
 print("Are you ready? (Yes/No)")
-ClientMultiSocket.connect((host, port))                                 # connecting the client to the server with this host and port
-message = input(" -> ")                                                 # take input
-print("\n")
-
-def get_input(message, channel):
-    response = input(message)
-    channel.put(response)
-
-# def input_with_timeout(message, timeout):
-#     channel = queue.Queue()
-#     message = message + " [{} sec timeout] ".format(timeout)
-#     thread = threading.Thread(target=get_input, args=(message, channel))
-#     # by setting this as a daemon thread, python won't wait for it to complete
-#     thread.daemon = True
-#     thread.start()
-
-#     try:
-#         response = channel.get(True, timeout)
-#         return response
-#     except queue.Empty:
-#         response=str(None)
-#         return response
-#     sleep(1)
-
-timeCount = 3
-def countdown():
-   local_count = timeCount
-   while local_count > 0:
-      print(local_count,"...")
-      time.sleep(1)
-      local_count -= 1
-   print("~ START ~")
-
-# game starts
-start=time.time()                                                  # stores the time at which game starts
-if(str(message.lower())=="yes" or str(message.lower())=="y" or str(message.lower()=="yess")):
-    ClientMultiSocket.send(message.encode())
-    name= input(" -> Type your name:")
-    ClientMultiSocket.send(name.encode())
-    countdown()
+try:
+    
+    ClientMultiSocket.connect((host, port))                                 # connecting the client to the server with this host and port
+    message = input(" -> ")                                                 # take input
     print("\n")
-    for i in range(1,11):
-        data = ClientMultiSocket.recv(1024).decode()                # receive question
-        print('Received from server: Question ' +str(i)+ data)      # show in client's terminal
-            
-#        if __name__ == "__main__":
-#           message = input_with_timeout("-> Answer: ", 5)
 
-        message=input("-> Answer: ")
-        ClientMultiSocket.send(message.encode())                    # send answer to the question asked
-        Mess=ClientMultiSocket.recv(1024).decode()                  # receive whether answer is correct or not
-        print("It is-->",Mess,)                                     # show in client's terminal
-        print("_______________________________________________","\n")
-            
-    Marks = ClientMultiSocket.recv(1024).decode()                   # receive total marks scoredby client
-    print("\n")
-    print('\033[1m' + 'Your total score: ' + Marks+ '\033[0m')      # show in terminal  
-    Endmess=ClientMultiSocket.recv(1024).decode()                   # final message from the server
-    print('\033[1m' + Endmess + '\033[0m')                          # show in terminal
+    def get_input(message, channel):
+        response = input(message)
+        channel.put(response)
 
-else:
-    Message = ClientMultiSocket.recv(1024).decode()
-    print("Received from server:", Message)
+    # def input_with_timeout(message, timeout):
+    #     channel = queue.Queue()
+    #     message = message + " [{} sec timeout] ".format(timeout)
+    #     thread = threading.Thread(target=get_input, args=(message, channel))
+    #     # by setting this as a daemon thread, python won't wait for it to complete
+    #     thread.daemon = True
+    #     thread.start()
 
- 
-end = time.time()                                                       # stores the time at which game ends
-tt=end-start                                                            # time taken by client to complete the quiz
-print('\033[1m'+"Your time taken: ", round(tt,3), "seconds"+'\033[0m')  # show in client's terminal
+    #     try:
+    #         response = channel.get(True, timeout)
+    #         return response
+    #     except queue.Empty:
+    #         response=str(None)
+    #         return response
+    #     sleep(1)
 
-ClientMultiSocket.close()                                               # close the connection
+    timeCount = 3
+    def countdown():
+       local_count = timeCount
+       while local_count > 0:
+          print(local_count,"...")
+          time.sleep(1)
+          local_count -= 1
+       print("~ START ~")
+
+    # game starts
+    start=time.time()                                                  # stores the time at which game starts
+    if(str(message.lower())=="yes" or str(message.lower())=="y" or str(message.lower()=="yess")):
+        ClientMultiSocket.send(message.encode())
+        name= input(" -> Type your name:")
+        ClientMultiSocket.send(name.encode())
+        countdown()
+        print("\n")
+        for i in range(1,11):
+            data = ClientMultiSocket.recv(1024).decode()                # receive question
+            print('Received from server: Question ' +str(i)+ data)      # show in client's terminal
+
+    #        if __name__ == "__main__":
+    #           message = input_with_timeout("-> Answer: ", 5)
+
+            message=input("-> Answer: ")
+            ClientMultiSocket.send(message.encode())                    # send answer to the question asked
+            Mess=ClientMultiSocket.recv(1024).decode()                  # receive whether answer is correct or not
+            print("It is-->",Mess,)                                     # show in client's terminal
+            print("_______________________________________________","\n")
+
+        Marks = ClientMultiSocket.recv(1024).decode()                   # receive total marks scoredby client
+        print("\n")
+        print('\033[1m' + 'Your total score: ' + Marks+ '\033[0m')      # show in terminal  
+        Endmess=ClientMultiSocket.recv(1024).decode()                   # final message from the server
+        print('\033[1m' + Endmess + '\033[0m')                          # show in terminal
+
+    else:
+        Message = ClientMultiSocket.recv(1024).decode()
+        print("Received from server:", Message)
 
 
-# In[ ]:
+    end = time.time()                                                       # stores the time at which game ends
+    tt=end-start                                                            # time taken by client to complete the quiz
+    print('\033[1m'+"Your time taken: ", round(tt,3), "seconds"+'\033[0m')  # show in client's terminal
 
+    ClientMultiSocket.close()                                               # close the connection
 
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
+except ConnectionRefusedError:
+    print("Currently the server is not running!")
 
 
 
