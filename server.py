@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import socket
 import os
@@ -12,7 +7,6 @@ import time
 
 ServerSideSocket = socket.socket()                  # creating a socket connection
 host = '127.0.0.1'
-# host='10.7.13.99'
 port = 5000
 ThreadCount=0                                       # keep track of no. of threads, i.e., no. of clients
 
