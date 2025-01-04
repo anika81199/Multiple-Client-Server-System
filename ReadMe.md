@@ -129,11 +129,11 @@ Initially, I learnt to establish the connection between the *server* and *client
 
 ### Server-side
 
-* First of all, we imported `socket` which is necessary, and also `random`.
-* Then we made a socket object `ServerSideSocket` using `socket.socket()`.
-* Using `socket.gethostbyname(hostName)` we accessed the IPv4 address of the machine on which the server program is running and stored it in `host`. Also, reserved a particular `port` number in the machine, for e.g., `5000`.
-* Then using `ServerSideSocket.bind((host,port))` we connected the HOST and PORT to the socket server.
-* After that, `listen()` command enables the server to listen to incoming connections from the clients. Herein, we have restricted our server to listen to at max 3 clients.
+* First of all, `socket` and `random` is imported, which is necessary.
+* Then a socket object `ServerSideSocket` is created using `socket.socket()`.
+* Using `socket.gethostbyname(hostName)` the IPv4 address of the machine on which the server program is running is accessed and then stored in `host`. Also, a particular `port` number in the machine is reserved, for e.g., `5000`.
+* Then using `ServerSideSocket.bind((host,port))` the HOST and PORT are connected to the socket server.
+* After that, `listen()` command enables the server to listen to incoming connections from the clients. Herein, we have restricted our server to listen to at *max 3 clients*.
 * After that, inside the infinite `while` loop, `.accept()` provides the client socket object `ServerSideSocket` with the address of the client.
 >
     The address of the connected client is shown in the server terminal.
@@ -165,8 +165,8 @@ Initially, I learnt to establish the connection between the *server* and *client
 ### Client-side
 
 * `socket.socket()` used to create a socket object for client, namely, `ClientMultiSocket`.
-* Using `socket.gethostbyname(hostName)` we accessed the IPv4 address of the machine on which the client program is running (assuming they both are running on the same machine), and stored it in `host`. Also, reserved a particular `port` number in the machine, for e.g., `5000`.
-* Then using `ClientMultiSocket.connect((host,port))` we connected the HOST and PORT to the server socket.
+* Using `socket.gethostbyname(hostName)` the IPv4 address of the machine on which the client program is running (assuming they both are running on the same machine) is accessed, and stored in `host`. Also, reserved a particular `port` number in the machine, for e.g., `5000`.
+* Then using `ClientMultiSocket.connect((host,port))` the HOST and PORT are connected to the server socket.
 * Certain printing statements are implemented to make the program user-friendly.
 * Client's response to the question,**"Are you ready to play?"** gets stored in a variable `message` and sent to the server via `ClientMultiSocket.send(message.encode())`.
 * `ClientMultiSocket.send(name.encode())` sends the name of the client to the server's terminal.
