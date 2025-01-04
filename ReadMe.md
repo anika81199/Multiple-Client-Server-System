@@ -10,14 +10,14 @@ A system designed in such a way that the server handles multiple clients simulta
 
 Client-Server system is basically the backbone of web browsing. We come across different types of client-server connections in our day-to-day life. The simplest example would be Google Search, it basically connects a client (i.e., user) to a server (i.e., Google Search) and provides the client with the information it needs.
 
-Herein, we have designed a quiz-game which is essentially a basic client-server system, where connection is established when client approaches a server. As soon as the connection is established, the server throws basic arithmetic problems on the client, and based on the answers, marks will be awarded to the client.
+Herein, I have designed a quiz-game which is essentially a basic client-server system, where connection is established when client approaches a server. As soon as the connection is established, the server throws basic arithmetic problems on the client, and based on the answers, marks will be awarded to the client.
 
 
 ![pic2](https://github.com/anika81199/Multiple-Client-Server-System/blob/main/cl.jpg)
 
 ## Software used
 
-The code has been written in Python on Jupyter Notebook
+The code has been written in Python on Jupyter Notebook.
 ## Background
 
 Before moving forward with the code, we need to look at certain important concepts/functions used in the program.
@@ -123,7 +123,7 @@ In order to execute this program, you need to follow the below steps sequentiall
 
 ## Itinerary of code
 
-Initially, we learnt to establish the connection between the *server* and *client* using **socket programming**. We made a simple chatbot in which the server used to send the exact same message that the client had sent. In the next step, we made a program for basic arithmetic-quiz in which the client sent a request for connection and then the server sent a total of 10 questions one after the other to the client and kept track of the marks at every correct or wrong answer. For every correct answer, the client got +1 mark and for every wrong answer, 0.25 marks was deducted. Then we modified this program for multiple clients using the concept of **multithreading**. The server opened a new thread for each client and kept track of the marks of each client. It closes the program after sending total marks to each of the client.
+Initially, I learnt to establish the connection between the *server* and *client* using **socket programming**. I made a simple chatbot in which the server used to send the exact same message that the client had sent. In the next step, I made a program for basic arithmetic-quiz in which the client sent a request for connection and then the server sent a total of 10 questions one after the other to the client and kept track of the marks at every correct or wrong answer. For every correct answer, the client got +1 mark and for every wrong answer, 0.25 marks was deducted. Then I modified this program for multiple clients using the concept of **multithreading**. The server opened a new thread for each client and kept track of the marks of each client. It closes the program after sending total marks to each of the client.
 
 ## Program Flow
 
